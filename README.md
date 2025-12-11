@@ -1,14 +1,4 @@
-<<<<<<< HEAD
-- 👋 Hi, I’m @newrare
-- 👀 I’m interested in Laravel
-- 🌱 I’m currently learning Tailwind CSS and Python
-
-<!---
-newrare/newrare is a ✨ special ✨ repository because its `README.md` (this file) appears on your GitHub profile.
-You can click the Preview link to take a look at your changes.
---->
-=======
-# Newrare
+# Newrare Website
 
 A modern, responsive landing page presenting Newrare and its innovative mobile applications.
 
@@ -142,4 +132,3 @@ SOFTWARE.
 ## Contact
 
 For inquiries about Newrare or our applications, please visit the website or contact us directly.
->>>>>>> 1e70545 (Initial commit)
