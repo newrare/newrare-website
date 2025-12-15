@@ -3,6 +3,14 @@
 // Global language state
 let currentLang = 'en';
 
+// Set dynamic year in copyright
+document.addEventListener('DOMContentLoaded', function() {
+    const yearElement = document.getElementById('year');
+    if (yearElement) {
+        yearElement.textContent = new Date().getFullYear();
+    }
+});
+
 // Lightning Generation Functions
 function generateLightningPath(width, height) {
     const segments = 10 + Math.floor(Math.random() * 8);
