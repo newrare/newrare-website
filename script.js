@@ -113,13 +113,6 @@ function toggleLanguage() {
 }
 
 // UI Toggle Functions
-function toggleTerms() {
-    const termsContent = document.querySelector('.terms-content');
-    if (termsContent) {
-        termsContent.classList.toggle('active');
-    }
-}
-
 function toggleMobileMenu() {
     const navLinks = document.querySelector('.nav-links');
     if (navLinks) {
@@ -218,3 +211,78 @@ window.addEventListener('scroll', function() {
 
     lastScrollTop = scrollTop;
 });
+
+// Carousel Functions
+const CAROUSEL_ITEM_WIDTH = 33.333; // 3 items visible at once
+let currentCarouselIndex = 0;
+
+function initializeCarousel() {
+    const carouselTrack = document.getElementById('carouselTrack');
+    const items = carouselTrack ? carouselTrack.querySelectorAll('.carousel-item').length : 0;
+    const dotsContainer = document.getElementById('carouselDots');
+    
+    if (dotsContainer && items > 0) {
+        dotsContainer.innerHTML = '';
+        // Nombre de dots = nombre de positions possibles (items - 2 pour 3 images visibles)
+        const numDots = Math.max(1, items - 2);
+        for (let i = 0; i < numDots; i++) {
+            const dot = document.createElement('span');
+            dot.className = `carousel-dot ${i === 0 ? 'active' : ''}`;
+            dot.onclick = () => goToSlide(i);
+            dotsContainer.appendChild(dot);
+        }
+    }
+}
+
+function scrollCarousel(direction) {
+    const carouselTrack = document.getElementById('carouselTrack');
+    const items = carouselTrack ? carouselTrack.querySelectorAll('.carousel-item').length : 0;
+    
+    if (items === 0) return;
+    
+    currentCarouselIndex += direction;
+    
+    const maxIndex = Math.max(0, items - 3);
+    
+    // Carousel infini - boucle au début ou à la fin
+    if (currentCarouselIndex > maxIndex) {
+        currentCarouselIndex = 0;
+    } else if (currentCarouselIndex < 0) {
+        currentCarouselIndex = maxIndex;
+    }
+    
+    updateCarouselPosition();
+}
+
+function goToSlide(index) {
+    const carouselTrack = document.getElementById('carouselTrack');
+    const items = carouselTrack ? carouselTrack.querySelectorAll('.carousel-item').length : 0;
+    
+    const maxIndex = Math.max(0, items - 3);
+    currentCarouselIndex = Math.min(index, maxIndex);
+    updateCarouselPosition();
+}
+
+function updateCarouselPosition() {
+    const carouselTrack = document.getElementById('carouselTrack');
+    if (!carouselTrack) return;
+    
+    const items = carouselTrack.querySelectorAll('.carousel-item');
+    if (items.length === 0) return;
+    
+    // Utiliser la largeur réelle du premier item (incluant le gap)
+    const itemWidth = items[0].offsetWidth;
+    const gap = 8; // 0.5rem = 8px (à 16px de base)
+    const moveDistance = (itemWidth + gap) * currentCarouselIndex;
+    
+    carouselTrack.style.transform = `translateX(-${moveDistance}px)`;
+    
+    // Update dots
+    const dots = document.querySelectorAll('.carousel-dot');
+    dots.forEach((dot, index) => {
+        dot.classList.toggle('active', index === currentCarouselIndex);
+    });
+}
+
+// Initialize carousel when DOM is loaded
+document.addEventListener('DOMContentLoaded', initializeCarousel);

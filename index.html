@@ -53,7 +53,9 @@
             <div class="apps-grid">
                 <!-- Magic Shield Brick -->
                 <div class="app-card">
-                    <div class="app-icon">🎮</div>
+                    <div class="app-icon app-icon-image">
+                        <img src="./image/magicShielBrick/icon.png" alt="Magic Shield Brick Icon">
+                    </div>
                     <h3>Magic Shield Brick</h3>
                     <p  data-fr="Un casse-brique circulaire révolutionnaire ! Collectez des bonus, gérez plusieurs balles simultanément et défendez votre bouclier magique dans ce jeu addictif et innovant."
                         data-en="A revolutionary circular brick breaker! Collect bonuses, manage multiple balls simultaneously and defend your magic shield in this addictive and innovative game."
@@ -100,6 +102,43 @@
         </div>
     </section>
 
+    <!-- Gallery/Carousel Section for Magic Shield Brick -->
+    <section class="gallery" id="gallery">
+        <div class="container">
+            <h2 class="section-title" data-fr="Magic Shield Brick" data-en="Magic Shield Brick"></h2>
+            <div class="carousel-wrapper">
+                <button class="carousel-button prev" onclick="scrollCarousel(-1)">❮</button>
+                <div class="carousel-viewport">
+                    <div class="carousel-track" id="carouselTrack">
+                        <div class="carousel-item">
+                            <img src="./image/magicShielBrick/custom.jpg" alt="Magic Shield Brick - Customization">
+                        </div>
+                        <div class="carousel-item">
+                            <img src="./image/magicShielBrick/loose.jpg" alt="Magic Shield Brick - Gameplay">
+                        </div>
+                        <div class="carousel-item">
+                            <img src="./image/magicShielBrick/option.jpg" alt="Magic Shield Brick - Options">
+                        </div>
+                        <div class="carousel-item">
+                            <img src="./image/magicShielBrick/ranking.jpg" alt="Magic Shield Brick - Ranking">
+                        </div>
+                        <div class="carousel-item">
+                            <img src="./image/magicShielBrick/score.jpg" alt="Magic Shield Brick - Score">
+                        </div>
+                        <div class="carousel-item">
+                            <img src="./image/magicShielBrick/star.jpg" alt="Magic Shield Brick - Stars">
+                        </div>
+                        <div class="carousel-item">
+                            <img src="./image/magicShielBrick/Start.jpg" alt="Magic Shield Brick - Start Screen">
+                        </div>
+                    </div>
+                </div>
+                <button class="carousel-button next" onclick="scrollCarousel(1)">❯</button>
+            </div>
+            <div class="carousel-dots" id="carouselDots"></div>
+        </div>
+    </section>
+
     <!-- About Section -->
     <section class="about" id="about">
         <div class="container">
@@ -131,12 +170,7 @@
     <section class="terms" id="terms">
         <div class="container">
             <h2 class="section-title" data-fr="Conditions d'Utilisation" data-en="Terms of Use"></h2>
-            <div class="terms-toggle">
-                <button class="toggle-button" id="termsToggle" onclick="toggleTerms()">
-                    <span data-fr="Afficher les conditions" data-en="Show terms"></span>
-                </button>
-            </div>
-            <div class="terms-content active" id="termsContent">
+            <div class="terms-content">
                 <h3 data-fr="1. Acceptation des conditions" data-en="1. Acceptance of terms"></h3>
                 <p  data-fr="En téléchargeant et en utilisant nos applications, vous acceptez les présentes conditions d'utilisation. Si vous n'acceptez pas ces conditions, veuillez ne pas utiliser nos applications."
                     data-en="By downloading and using our applications, you accept these terms of use. If you do not accept these terms, please do not use our applications."
