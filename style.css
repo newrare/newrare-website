@@ -87,7 +87,12 @@ nav {
     position: fixed;
     top: 0;
     width: 100%;
-    background: linear-gradient(180deg, rgba(255, 255, 255, 0.98) 0%, rgba(240, 240, 240, 0.95) 100%);
+    background: 
+        radial-gradient(ellipse at 20% 30%, rgba(102, 126, 234, 0.28) 0%, transparent 40%),
+        radial-gradient(ellipse at 80% 60%, rgba(31, 51, 96, 0.21) 0%, transparent 45%),
+        radial-gradient(ellipse at 40% 80%, rgba(15, 23, 42, 0.245) 0%, transparent 50%),
+        radial-gradient(ellipse at 70% 20%, rgba(79, 70, 160, 0.21) 0%, transparent 42%),
+        linear-gradient(80deg, rgba(45, 53, 97, 0.7) 0%, rgba(26, 40, 71, 0.7) 30%, rgba(15, 23, 42, 0.7) 70%, rgba(10, 15, 31, 0.7) 100%);
     backdrop-filter: blur(10px);
     box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05), 0 2px 10px rgba(0, 0, 0, 0.08);
     border-bottom: 1px solid rgba(0, 0, 0, 0.04);
@@ -107,10 +112,7 @@ nav {
 .logo {
     font-size: 1.5rem;
     font-weight: 700;
-    background: var(--gradient);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    background-clip: text;
+    color: var(--white);
 }
 
 .logo-link {
@@ -128,10 +130,7 @@ nav {
 .brand-name {
     font-size: 1.3rem;
     font-weight: 700;
-    background: var(--gradient);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    background-clip: text;
+    color: var(--white);
     transition: all 0.3s ease;
 }
 
@@ -162,20 +161,20 @@ nav {
 
 .nav-links a {
     text-decoration: none;
-    color: var(--text-dark);
+    color: var(--white);
     font-weight: 700;
     transition: color 0.3s ease;
 }
 
 .nav-links a:hover {
-    color: var(--primary-color);
+    color: rgba(255, 255, 255, 0.8);
 }
 
 .lang-toggle {
     padding: 0.5rem 1rem;
-    border: 2px solid var(--primary-color);
+    border: 2px solid var(--white);
     background: transparent;
-    color: var(--primary-color);
+    color: var(--white);
     border-radius: 20px;
     cursor: pointer;
     font-weight: 600;
@@ -208,12 +207,8 @@ nav {
     display: flex;
     align-items: center;
     justify-content: center;
-    background: 
-        radial-gradient(ellipse at 20% 30%, rgba(102, 126, 234, 0.4) 0%, transparent 40%),
-        radial-gradient(ellipse at 80% 60%, rgba(31, 51, 96, 0.3) 0%, transparent 45%),
-        radial-gradient(ellipse at 40% 80%, rgba(15, 23, 42, 0.35) 0%, transparent 50%),
-        radial-gradient(ellipse at 70% 20%, rgba(79, 70, 160, 0.3) 0%, transparent 42%),
-        linear-gradient(135deg, #2d3561 0%, #1a2847 30%, #0f172a 70%, #0a0f1f 100%);
+    background: url('./image/hero.jpg') center / cover no-repeat;
+    background-attachment: fixed;
     position: relative;
     overflow: hidden;
     padding-top: 80px;
@@ -684,7 +679,12 @@ section:nth-child(even) {
 
 /* Footer */
 footer {
-    background: var(--dark-bg);
+    background: 
+        radial-gradient(ellipse at 20% 30%, rgba(102, 126, 234, 0.4) 0%, transparent 40%),
+        radial-gradient(ellipse at 80% 60%, rgba(31, 51, 96, 0.3) 0%, transparent 45%),
+        radial-gradient(ellipse at 40% 80%, rgba(15, 23, 42, 0.35) 0%, transparent 50%),
+        radial-gradient(ellipse at 70% 20%, rgba(79, 70, 160, 0.3) 0%, transparent 42%),
+        linear-gradient(135deg, #2d3561 0%, #1a2847 30%, #0f172a 70%, #0a0f1f 100%);
     color: var(--white);
     padding: 3rem 2rem 1rem;
 }
@@ -881,6 +881,10 @@ footer {
 
     .hero {
         padding-top: 80px;
+    }
+
+    .hero {
+        background-attachment: scroll;
     }
 
     .apps-grid {

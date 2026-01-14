@@ -164,11 +164,10 @@ window.addEventListener('scroll', function() {
     const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
 
     if (nav) {
+        // Le gradient reste le même, on augmente juste l'opacité au scroll
         if (scrollTop > 100) {
-            nav.style.background = 'rgba(255, 255, 255, 0.98)';
             nav.style.boxShadow = '0 2px 10px rgba(0, 0, 0, 0.1)';
         } else {
-            nav.style.background = 'rgba(255, 255, 255, 0.95)';
             nav.style.boxShadow = '0 1px 3px rgba(0, 0, 0, 0.05), 0 2px 10px rgba(0, 0, 0, 0.08)';
         }
     }
