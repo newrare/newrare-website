@@ -526,6 +526,23 @@ section:nth-child(even) {
     height: 24px;
 }
 
+/* Disabled links (href="#") */
+a[href="#"].store-button {
+    opacity: 0.5;
+    cursor: not-allowed;
+    background: linear-gradient(135deg, #374151, #4b5563);
+}
+
+a[href="#"].store-button:hover {
+    background: linear-gradient(135deg, #374151, #4b5563);
+    transform: scale(1);
+    box-shadow: none;
+}
+
+a[href="#"].store-button::before {
+    background: none;
+}
+
 /* About Section */
 .about {
     background: var(--light-bg);
